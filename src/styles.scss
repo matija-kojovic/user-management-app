@@ -1,0 +1,101 @@
+@import 'assets/styles/shared';
+
+body {
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    @include respond-to(tablet) {
+        padding: 20px;
+    }
+    @include respond-to(desktop-small) {
+        padding: 20px 30px;
+    }
+    @include respond-to(desktop-large) {
+        padding: 20px 50px;
+    }
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: $font-primary;
+    font-size: $font-size-s;
+    @include respond-to(tablet) {
+        font-size: $font-size-m;
+    }
+
+    &.btn-primary {
+        border: 1px solid $button-primary;
+        color: $button-primary;
+
+        &:hover {
+            background-color: $button-primary;
+            color: $text-white;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: gray;
+            color: $text-white;
+            border-color: gray;
+        }
+    }
+
+    &.btn-cancel {
+        border: 1px solid $button-danger;
+        color: $button-danger;
+
+        &:hover {
+            background-color: $button-danger;
+            color: $text-white;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: $button-disabled;
+            color: $text-white;
+            border-color: $button-disabled;
+        }
+    }
+
+    &.btn-active {
+        background-color: $button-active;
+        border: 1px solid $button-active;
+        color: $text-white;
+        &:hover {
+            background-color: $button-active-darken;
+        }
+    }
+
+    &.btn-inactive {
+        background-color: $button-danger;
+        border: 1px solid $button-danger;
+        color: $text-white;
+        &:hover {
+            background-color: $button-danger-darken;
+        }
+    }
+
+    &.btn-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $text-gray;
+
+        &:hover {
+            color: $text-black;
+
+        }
+    }
+}
+
+
+

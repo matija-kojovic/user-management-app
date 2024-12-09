@@ -1,0 +1,151 @@
+@import "assets/styles/shared";
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #fff;
+    max-width: 460px;
+    min-width: 260px;
+    width: 100%;
+    margin: 0 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+    font-family: $font-primary;
+}
+
+.modal-header {
+    background: $background-color;
+    color: $text-black;
+    padding: 15px 15px 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        margin: 0;
+    }
+
+    button {
+        padding: 5px;
+        font-size: 25px;
+    }
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        margin-left: 10px;
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 24px;
+    width: 100%;
+    font-family: $font-primary;
+
+    label {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        background: white;
+        padding: 0 6px;
+        border-radius: 4px;
+        font-size: $font-size-m;
+        color: $text-gray;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    input[type="text"] {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px;
+        font-size: $font-size-m;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: #007bff;
+        }
+
+        &:focus + label,
+        &.hasValue + label {
+            top: -6px;
+            font-size: 12px;
+        }
+
+        &.invalid {
+            border-color: red;
+
+            &.hasValue + label,
+            &.invalid  + label {
+                color: red;
+            }
+        }
+    }
+
+    input[type="checkbox"] {
+        margin-right: 6px;
+        height: 16px;
+        width: 16px;
+    }
+
+    small {
+        position: absolute;
+        font-size: 12px;
+        display: block;
+        margin-top: 4px;
+        color: #dc3545;
+    }
+
+    &.invalid input {
+        border-color: #dc3545;
+    }
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+
+    label {
+        position: static;
+        transform: none;
+        font-size: $font-size-m;
+        margin: 0;
+        color: $text-gray;
+    }
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $text-gray;
+
+    &:hover {
+        color: $text-black;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="table-container">
+    <table class="custom-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Active</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            @for (user of users(); track user.id) {
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>
+                        <button
+                            (click)="toggleActive.emit(user.id)"
+                            [ngClass]="user.active ? 'btn-active' : 'btn-inactive'"
+                        >
+                            {{ user.active ? 'Active' : 'Inactive' }}
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

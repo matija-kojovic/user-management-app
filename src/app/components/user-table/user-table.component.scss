@@ -1,0 +1,70 @@
+@import "assets/styles/shared";
+
+.custom-table {
+    width: 100%;
+    min-width: 300px;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    th, td {
+        box-sizing: border-box;
+        font-size: $font-size-s;
+        font-family: $font-primary;
+        color: $text-black;
+        padding: 8px 12px;
+        text-align: left;
+        height: 50px;
+
+        @include respond-to(tablet) {
+            font-size: $font-size-m;
+
+        }
+        @include respond-to(desktop-small) {
+
+        }
+        @include respond-to(desktop-large) {
+            font-size: $font-size-l;
+        }
+    }
+
+    th {
+        background-color: $table-header-bg;
+        color: $text-white;
+    }
+
+    th + th {
+        border-left: 1px solid $table-border;
+    }
+
+    td {
+        border: 1px solid $table-border;
+    }
+
+    thead {
+        tr {
+            th:first-child {
+                border-top-left-radius: 8px;
+            }
+
+            th:last-child {
+                border-top-right-radius: 8px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            color: $text-black;
+            &:nth-child(odd) {
+                background-color: $table-row-odd-bg;
+            }
+            &:nth-child(even) {
+                background-color: $table-row-even-bg;
+            }
+        }
+
+        tr:hover {
+            background-color: $table-row-hover-bg;
+        }
+    }
+}

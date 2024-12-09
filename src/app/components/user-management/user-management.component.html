@@ -1,0 +1,10 @@
+<div class="table-container">
+    <app-user-table
+        [users]="users$ | async"
+        (toggleActive)="handleToggleActive($event)"
+    ></app-user-table>
+</div>
+
+<button class="btn-primary" (click)="openModal()"  [disabled]="!(canAddUser$ | async)">Add User</button>
+
+<app-user-modal (createUser)="handleCreateUser($event)" #userModal></app-user-modal>
